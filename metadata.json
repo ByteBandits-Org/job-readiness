@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Smart Job-Readiness Coach",
+  "description": "An AI-powered coach that analyzes your CV against job descriptions, provides interview practice, and offers personalized skill recommendations to help you land your dream job.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
