@@ -45,7 +45,7 @@ const App: React.FC = () => {
 
     try {
       // FIX: Use process.env.API_KEY as per the coding guidelines for API key management.
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: `First, identify the user's full name from the CV and the job title from the job description. Then, act as a friendly and encouraging expert career coach. Use the identified name to personalize your feedback where appropriate. Based on the following CV and job description, provide: 1. Actionable, concise, and constructive feedback to improve the CV for this specific job. 2. A list of the top 3-5 skill gaps with recommendations for courses or projects. 3. Suggest 2-3 alternative career streams or industries where the user's skills would be valuable, explaining why. 4. Provide one powerful CV structure tip with a clear 'before' and 'after' example. The 'before' should be a common mistake (e.g., passive language), and the 'after' should be the improved version (e.g., using action verbs and quantifiable results) that is more attractive to a hiring manager. The tip should explain *why* the 'after' is better.
