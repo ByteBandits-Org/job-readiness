@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Job-Readiness Coach</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+      /* A small style block for scrollbar styling if needed, otherwise kept minimal */
+      body {
+        font-family: 'Inter', sans-serif; /* A nice default font */
+      }
+    </style>
+    <script>
+      // Prevents flash of unstyled content (FOUC) for dark mode
+      if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              background: '#F8F9FB', // Light gray background
+              surface: '#FFFFFF',    // White for cards
+              primary: '#1A202C',    // Dark text
+              secondary: '#64748B',  // Gray text
+              accent: '#2DD4BF',     // Teal
+              'accent-hover': '#26bba6',
+              'header-start': '#D53F8C', // Pink for gradient
+              'header-end': '#805AD5',   // Purple for gradient
+              'border-color': '#E2E8F0',
+
+              // Dark mode colors
+              dark: {
+                background: '#0F172A', // Slate 900
+                surface: '#1E293B',    // Slate 800
+                primary: '#F8FAFC',    // Slate 50
+                secondary: '#94A3B8',  // Slate 400
+                border: '#334155',     // Slate 700
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          },
+        },
+      }
+    </script>
+    <!-- Additions for PDF and DOCX parsing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.8.0/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.js"></script>
+
+<link rel="stylesheet" href="/index.css">
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "vite": "https://aistudiocdn.com/vite@^7.1.4",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.16.0",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.1.1"
+  }
+}
+</script>
+  <script type="module" crossorigin src="/assets/index-B7RUoBRG.js"></script>
+</head>
+  <body class="bg-background dark:bg-dark-background transition-colors duration-500 font-sans">
+    <div id="root"></div>
+  </body>
+</html>
